@@ -24,6 +24,7 @@ function DirectorCard() {
       </ul>
       <Link to={`movies/new`}>Add New Movie</Link>
       {/* Movie compoenents should render here depending on route */}
+      <Outlet /> {/* Forgot this line*/}
     </div>
   );
 }
