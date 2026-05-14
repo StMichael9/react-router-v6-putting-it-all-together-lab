@@ -14,10 +14,10 @@ const App = () => {
       <Routes>
         {/* Top level routes */}
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="/about" element={<About />} />
 
         {/* Directors parent route */}
-        <Route path="directors" element={<DirectorContainer />}>
+        <Route path="/directors/*" element={<DirectorContainer />}>
           <Route index element={<DirectorList />} />
           <Route path="new" element={<DirectorForm />} />
 

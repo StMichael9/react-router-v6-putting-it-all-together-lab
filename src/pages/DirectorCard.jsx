@@ -1,7 +1,8 @@
 import { useOutletContext, Link, useParams, Outlet } from "react-router-dom";
 
 function DirectorCard() {
-  const { directors, setDirectors } = useOutletContext();
+  const outletContext = useOutletContext();
+  const { directors, setDirectors } = outletContext;
   const { id } = useParams();
   // Used find method instead of For of loop
   const director = directors.find((d) => String(d.id) === String(id));
@@ -24,7 +25,7 @@ function DirectorCard() {
       </ul>
       <Link to={`movies/new`}>Add New Movie</Link>
       {/* Movie compoenents should render here depending on route */}
-      <Outlet /> {/* Forgot this line*/}
+      <Outlet context={outletContext} /> {/* Forgot this line*/}
     </div>
   );
 }
